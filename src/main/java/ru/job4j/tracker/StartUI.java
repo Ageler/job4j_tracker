@@ -28,7 +28,9 @@ public class StartUI {
                     System.out.println("Edit item");
                     System.out.print("Input id: ");
                     int id = Integer.valueOf(scanner.nextLine());
-                    Item newItem = new Item();
+                    System.out.print("Input name: ");
+                    String name = scanner.nextLine();
+                    Item newItem = new Item(id, name);
                     if (tracker.replace(id, newItem)) {
                         System.out.println("Successful replacement!");// вывод об успешности операции
                     } else {
@@ -47,8 +49,9 @@ public class StartUI {
                     System.out.println("Find item by Id");
                     System.out.print("Input id: ");
                     int id = Integer.valueOf(scanner.nextLine());
-                    if (tracker.findById(id) != null) {
-                        System.out.println("Item was found!");// вывод об успешности операции
+                    Item item = tracker.findById(id);
+                    if (item != null) {
+                        System.out.println(item);// вывод об успешности операции
                     } else {
                         System.out.println("No such item");
                     }
@@ -57,10 +60,13 @@ public class StartUI {
                     System.out.println("Input name");
                     String name = scanner.nextLine();
                    Item[] items = tracker.findByName(name);
-                    for (Item i: items
-                         ) {
-                        System.out.println("item id: " + i.getId());
-                    }
+                   if(items.length > 0) {
+                       for (Item i : items
+                       ) {
+                           System.out.println("item id: " + i.getId());
+                       }
+                   }
+                   else System.out.println("Not found");
                 } else if (select == 6) {
                     run = false;
                 }
