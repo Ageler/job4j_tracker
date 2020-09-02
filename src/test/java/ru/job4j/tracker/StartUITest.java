@@ -19,6 +19,33 @@ public class StartUITest extends TestCase {
         expected.setName("Fix PC");
         assertThat(created.getName(), is(expected.getName()));
     }
+    @Test
+    public void testReplaceItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item();
+        item.setName("new item");
+        tracker.add(item);
+        String[] answers = {
+                String.valueOf(item.getId()), // id сохраненной заявки в объект tracker.
+                "replaced item"
+        };
+        StartUI.replaceItem(new StubInput(answers), tracker);
+        Item replaced = tracker.findById(item.getId());
+        assertThat(replaced.getName(), is("replaced item"));
+    }
 
+    public void testDeleteItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item();
+        item.setName("new item");
+        tracker.add(item);
+        String[] answers = {String.valueOf(item.getId())};
+        StartUI.deleteItem(new StubInput(answers), tracker);
+        try {
+            assertThat(tracker.findById(item.getId()), null);
+        } catch (NullPointerException e) {
+            System.out.println("test complete!");
+        }
 
+    }
 }

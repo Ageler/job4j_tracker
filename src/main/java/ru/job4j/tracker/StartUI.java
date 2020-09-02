@@ -12,6 +12,16 @@ public class StartUI {
         tracker.add(item);
     }
 
+    public static void replaceItem(Input input, Tracker tracker) {
+        System.out.println(" === Update item ====");
+        int id = Integer.parseInt(input.askStr("Enter id:"));
+        String name = input.askStr("Enter a new name of item: ");
+        Item item = new Item();
+        item.setName(name);
+        item.setId(id);
+        tracker.replace(id, item);
+    }
+
     public static void showAllItems(Tracker tracker) {
         System.out.println("Show all items");
         Item[] items = tracker.findAll();
