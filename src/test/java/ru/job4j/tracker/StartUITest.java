@@ -40,7 +40,7 @@ public class StartUITest extends TestCase {
         item.setName("new item");
         tracker.add(item);
         String[] answers = {String.valueOf(item.getId())};
-        String exp = null;
+        Item exp = null;
         StartUI.deleteItem(new StubInput(answers), tracker);
        assertThat(tracker.findById(item.getId()), is(exp));
         }
