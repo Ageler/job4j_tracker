@@ -40,12 +40,9 @@ public class StartUITest extends TestCase {
         item.setName("new item");
         tracker.add(item);
         String[] answers = {String.valueOf(item.getId())};
+        String exp = null;
         StartUI.deleteItem(new StubInput(answers), tracker);
-        try {
-            assertThat(tracker.findById(item.getId()), null);
-        } catch (NullPointerException e) {
-            System.out.println("test complete!");
+       assertThat(tracker.findById(item.getId()), is(exp));
         }
 
     }
-}
