@@ -13,7 +13,11 @@ public class ReplaceAction implements UserAction {
         Item item = new Item();
         item.setName(name);
         item.setId(id);
-        tracker.replace(id, item);
+        if (tracker.replace(id, item)) {
+            System.out.println("Successful replacement!");// вывод об успешности операции
+        } else {
+            System.out.println("Error"); // вывод об ошибке
+        }
         return true;
     }
 }
