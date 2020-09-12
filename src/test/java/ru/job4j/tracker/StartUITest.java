@@ -47,7 +47,7 @@ public class StartUITest extends TestCase {
         }
 
     @Test
-    public void testCreateItem1() {
+    public void whenCreateItem() {
         Input in = new StubInput(
                 new String[] {"0", "Item name", "1"}
         );
@@ -61,7 +61,7 @@ public class StartUITest extends TestCase {
     }
 
     @Test
-    public void testReplaceItem1() {
+    public void whenReplaceItem() {
         Tracker tracker = new Tracker();
         /* Добавим в tracker новую заявку */
         Item item = tracker.add(new Item());
@@ -80,7 +80,7 @@ public class StartUITest extends TestCase {
     }
 
     @Test
-    public void testDeleteItem1() {
+    public void whenDeleteItem() {
         Tracker tracker = new Tracker();
         /* Добавим в tracker новую заявку */
         Item item = tracker.add(new Item());

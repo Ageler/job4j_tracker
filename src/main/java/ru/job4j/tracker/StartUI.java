@@ -92,6 +92,12 @@ public class StartUI {
         }
     }
 
+    public  void whenCreateItem() {}
+
+    public void whenReplaceItem() {}
+
+    public void whenDeleteItem() {}
+
     public static void main(String[] args) {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
