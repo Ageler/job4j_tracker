@@ -106,15 +106,21 @@ public class StartUI {
 
     public void whenExit() {}
 
+    public void whenFindByIdAction() {}
+
+    public void whenFindByNameAction() {}
+
+    public  void whenShowAllItemsAction() {}
+
     public static void main(String[] args) {
         Output output = new ConsoleOutput();
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-        UserAction[] actions = {
-                new CreateAction(output), new DeleteAction(), new ReplaceAction(), new FindByIdAction(),
-                new FindByNameAction(), new ShowAllItemsAction(), new ExitAction()
-        };
-        new StartUI(output).init(input, tracker, actions);
+     //   UserAction[] actions = {
+     //           new CreateAction(output), new DeleteAction(), new ReplaceAction(), new FindByIdAction(),
+      //          new FindByNameAction(), new ShowAllItemsAction(), new ExitAction()
+      //  };
+     //   new StartUI(output).init(input, tracker, actions);
     }
 }
 
