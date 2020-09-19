@@ -116,6 +116,8 @@ public class StartUI {
 
     public  void whenShowAllItemsAction() {}
 
+    public void whenInvalidExit() {}
+
     public static void main(String[] args) {
         Output output = new ConsoleOutput();
         Input input = new ValidateInput();
