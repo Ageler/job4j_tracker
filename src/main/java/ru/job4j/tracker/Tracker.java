@@ -23,7 +23,7 @@ public class Tracker {
     public List<Item> findByName(String key) {
         int ink = 0;
         List<Item> commonItem = new ArrayList<>();
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < items.size(); i++) {
             if(key.equals(items.get(i).getName())) {
                 commonItem.add(items.get(i));
                 ink++;
@@ -34,7 +34,7 @@ public class Tracker {
 
     private int indexOf(int id) {
         int rsl = -1;
-        for (int index = 0; index < size; index++) {
+        for (int index = 0; index < items.size(); index++) {
             if (items.get(index).getId() == id) {
                 rsl = index;
                 break;
@@ -61,9 +61,7 @@ public class Tracker {
     public boolean delete(int id) {
         int index = indexOf(id);
         if(index != -1) {
-            System.arraycopy(items, index + 1, items, index, size - index);
-            items.remove(size - 1);
-            size--;
+            items.remove(index);
         }
         return true;
     }

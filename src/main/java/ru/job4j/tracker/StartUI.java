@@ -129,6 +129,9 @@ public class StartUI {
                 actions.add(new ExitAction());
                 actions.add(new FindByIdAction(output));
         actions.add(new FindByNameAction(output));
+        actions.add(new ShowAllItemsAction(output));
+        actions.add(new ReplaceAction(output));
+        actions.add(new DeleteAction(output));
                 /* another actions */
 
         new StartUI(output).init(input, tracker, actions);
