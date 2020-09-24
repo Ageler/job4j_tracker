@@ -24,7 +24,7 @@ public class Tracker {
         int ink = 0;
         List<Item> commonItem = new ArrayList<>();
         for (int i = 0; i < items.size(); i++) {
-            if(key.equals(items.get(i).getName())) {
+            if (key.equals(items.get(i).getName())) {
                 commonItem.add(items.get(i));
                 ink++;
             }
@@ -51,7 +51,7 @@ public class Tracker {
 
     public boolean replace(int id, Item item) {
         int index = indexOf(id);
-        if(index != -1) {
+        if (index != -1) {
             items.set(index, item);
             item.setId(id);
         }
@@ -60,7 +60,7 @@ public class Tracker {
 
     public boolean delete(int id) {
         int index = indexOf(id);
-        if(index != -1) {
+        if (index != -1) {
             items.remove(index);
         }
         return true;

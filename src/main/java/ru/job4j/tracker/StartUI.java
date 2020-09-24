@@ -39,13 +39,14 @@ public class StartUI {
             System.out.println("item id: " + i.getId());
         }
     }
+
     public static void  editItem(Input input, Tracker tracker) {
         System.out.println("Edit item");
         int id = Integer.valueOf(input.askStr("Input id: "));
         String name = input.askStr("Input name: ");
         Item newItem = new Item(id, name);
         if (tracker.replace(id, newItem)) {
-            System.out.println("Successful replacement!");// вывод об успешности операции
+            System.out.println("Successful replacement!"); // вывод об успешности операции
         } else {
             System.out.println("Error"); // вывод об ошибке
         }
@@ -55,7 +56,7 @@ public class StartUI {
         System.out.println("Delete item");
         int id = Integer.valueOf(input.askStr("Input id: "));
         if (tracker.delete(id)) {
-            System.out.println("Successful delete!");// вывод об успешности операции
+            System.out.println("Successful delete!"); // вывод об успешности операции
         } else {
             System.out.println("Error");
         }
@@ -66,7 +67,7 @@ public class StartUI {
         int id = Integer.valueOf(input.askStr("Input id: "));
         Item item = tracker.findById(id);
         if (item != null) {
-            System.out.println(item);// вывод об успешности операции
+            System.out.println(item); // вывод об успешности операции
         } else {
             System.out.println("No such item");
         }
@@ -81,7 +82,9 @@ public class StartUI {
             ) {
                 System.out.println("item id: " + i.getId());
             }
-        } else System.out.println("Not found");
+        } else {
+            System.out.println("Not found");
+        }
     }
 
     public void init(Input input, Tracker tracker, List<UserAction> actions) {
@@ -105,21 +108,37 @@ public class StartUI {
         }
     }
 
-    public  void whenCreateItem() {}
+    public  void whenCreateItem() {
 
-    public void whenReplaceItem() {}
+    }
 
-    public void whenDeleteItem() {}
+    public void whenReplaceItem() {
 
-    public void whenExit() {}
+    }
 
-    public void whenFindByIdAction() {}
+    public void whenDeleteItem() {
 
-    public void whenFindByNameAction() {}
+    }
 
-    public  void whenShowAllItemsAction() {}
+    public void whenExit() {
 
-    public void whenInvalidExit() {}
+    }
+
+    public void whenFindByIdAction() {
+
+    }
+
+    public void whenFindByNameAction() {
+
+    }
+
+    public  void whenShowAllItemsAction() {
+
+    }
+
+    public void whenInvalidExit() {
+
+    }
 
     public static void main(String[] args) {
         Output output = new ConsoleOutput();

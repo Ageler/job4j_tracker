@@ -25,7 +25,9 @@ public class FindByNameAction implements UserAction {
             ) {
                 out.println("item id: " + i.getId());
             }
-        } else out.println("Not found");
+        } else {
+            out.println("Not found");
+        }
         return true;
     }
 }

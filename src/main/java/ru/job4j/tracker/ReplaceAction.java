@@ -21,7 +21,7 @@ public class ReplaceAction implements UserAction {
         item.setName(name);
         item.setId(id);
         if (tracker.replace(id, item)) {
-            out.println("Successful replacement!");// вывод об успешности операции
+            out.println("Successful replacement!"); // вывод об успешности операции
         } else {
             out.println("Error"); // вывод об ошибке
         }
