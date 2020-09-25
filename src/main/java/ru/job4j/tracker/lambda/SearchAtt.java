@@ -16,12 +16,7 @@ public class SearchAtt {
    }
 
    public static List<Attachment> filterSize(List<Attachment> attachments) {
-       Predicate<Attachment> func = new Predicate<Attachment>() {
-           @Override
-           public boolean test(Attachment attachment) {
-               return attachment.getSize() > 100;
-           }
-       };
+       Predicate<Attachment> func = attachment -> attachment.getSize() > 100;
        return filter(attachments, func);
    }
 
