@@ -6,8 +6,17 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class StudentMap {
-    List<Student> students = new ArrayList<>();
-    Map<String, Student> stdMap = students.stream().distinct().collect(Collectors
-            .toMap(student -> student.getSurname(),
-                    student -> student));
+
+    public Student duplicate(Student student1) {
+        student1.setSurname(student1.getSurname() +  "duplicate");
+        return student1;
+    }
+
+    public Map<String, Student> getStdMap(List<Student> students) {
+        Map<String, Student> stdMap = students.stream().collect(Collectors
+                .toMap(student -> student.getSurname(),
+                        student -> student,
+                        (student, student2) -> duplicate(student)));
+        return stdMap;
+    }
 }
